@@ -1,0 +1,103 @@
+:root { 
+	--clr-neon: #29a2ff;
+	--clr-bg: #000;
+}
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+
+body {
+	font-family: 'Balsamiq Sans', cursive;
+	padding: 20px;
+	margin: 0;
+	height: 100vh;
+	background-color: var(--clr-bg);
+	color: #fff;
+	opacity: 1;
+	transition: opacity 1000ms linear;
+}
+
+@media (min-width: 700px) {
+	.game {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: flex-start;
+		min-height: 50%;
+		margin: 0px;
+	}
+
+
+	#hunt {
+		display: inline-block;
+
+		font-size: 1.4rem;
+		text-decoration: none;
+		color: var(--clr-neon);
+		text-align: center;
+		cursor: pointer;
+		text-transform: capitalize;
+		font-family: 'Balsamiq Sans', cursive;
+
+		padding: 5px;
+		width: 8em;
+
+		border: var(--clr-neon) 0.12em solid;
+		border-radius: 0.25em;
+		text-shadow:
+			0 0 0.12em currentColor,
+			0 0 0.2em currentColor,
+			0 0 0.3em currentColor;
+		box-shadow: 
+			inset 0 0 0.2em 0 var(--clr-neon),
+			inset 0 0 0.5em 0.06em var(--clr-neon),
+			0 0 0.2em 0 var(--clr-neon),
+			0 0 0.6em 0.1em var(--clr-neon);
+		background: none;
+	}
+	#hunt:hover,
+	#hunt:focus {
+		background: var(--clr-neon);
+		color: var(--clr-bg);
+		text-shadow: none;
+		box-shadow: 
+			0 0 0.1em 0 var(--clr-neon),
+			0 0 1em 0.5em var(--clr-neon);
+
+	}
+	#hunt:focus {
+		outline: none;
+	}
+
+
+	.sorry {
+		display: none;
+	}
+}
+
+@media (max-width: 700px) {
+	.game {
+		display: none;
+	}
+	.sorry {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		min-width: 100%;
+		max-height: 80px;
+		margin-top: 70px;
+	}
+	.sorry span {
+		margin: 3px;
+		font-size: 18px;
+	}
+	.sorry p {
+		font-size: 24px;
+		padding: 3px;
+	}
+}
